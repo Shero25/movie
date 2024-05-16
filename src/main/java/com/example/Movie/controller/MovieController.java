@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/movie")
+@CrossOrigin("*")
 public class MovieController {
     @Autowired
     private MovieServiceImpl movieService;
@@ -20,6 +21,7 @@ public class MovieController {
     @PostMapping
     public  void save(@RequestBody Movie movie)
     {
+
         movieService.saveMovies(movie);
     }
     @GetMapping("/{id}")
